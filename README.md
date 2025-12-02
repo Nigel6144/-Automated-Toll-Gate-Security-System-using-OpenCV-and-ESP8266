@@ -1,5 +1,5 @@
-# Automated-Toll-Gate-Security-System-using-OpenCV-and-ESP8266
-This project uses Python and OpenCV to detect and read vehicle number plates. An ESP8266 module checks each plate against a stored database, sends SMS notifications to owners, and triggers alerts for blacklisted or stolen vehicles.
+# Automated-Toll-Gate-Security-System-using-OpenCV-and-ESP8266/ESP32
+This project uses Python and OpenCV to detect and read vehicle number plates. An ESP8266/ESP32 module checks each plate against a stored database, sends SMS notifications to owners, and triggers alerts for blacklisted or stolen vehicles.
 
 ## Files
 
@@ -36,7 +36,7 @@ This project uses Python and OpenCV to detect and read vehicle number plates. An
 
 ### Hardware
 
-- ESP32 Development Board (WiFi Module)
+- ESP8266/ESP32 Development Board (WiFi Module)
 
 - Webcam (USB or Integrated)
 
