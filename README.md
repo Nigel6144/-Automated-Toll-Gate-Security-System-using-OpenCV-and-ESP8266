@@ -16,9 +16,9 @@ This project uses Python and OpenCV to detect and read vehicle number plates. An
 ## Overview
 ### This project consists of two main components working in tandem:
 
--Computer Vision Module : Captures video, detects license plates using EasyOCR, and sends the data to the microcontroller.
+- Computer Vision Module : Captures video, detects license plates using EasyOCR, and sends the data to the microcontroller.
 
--IoT Controller (ESP8266): Receives plate data, verifies it against a synchronized cloud database (Supabase), and triggers SMS alerts (Twilio) based on the vehicle's status                             (Normal vs. Blacklisted).
+- IoT Controller (ESP8266): Receives plate data, verifies it against a synchronized cloud database (Supabase), and triggers SMS alerts (Twilio) based on the vehicle's         status i.e Normal or Blacklisted.
 
 
 ---
@@ -36,11 +36,11 @@ This project uses Python and OpenCV to detect and read vehicle number plates. An
 
 ### Hardware
 
--ESP32 Development Board (WiFi Module)
+- ESP32 Development Board (WiFi Module)
 
--Webcam (USB or Integrated)
+- Webcam (USB or Integrated)
 
--PC/Laptop (To run the Python processing script)
+- PC/Laptop (To run the Python processing script)
 
 ### Software & Services
 
@@ -58,7 +58,7 @@ This project uses Python and OpenCV to detect and read vehicle number plates. An
 ---
 
 ## Installation and Setup
-### Database Setup (Supabase)
+### 1. Database Setup (Supabase)
 
   - Create a Supabase project.
 
@@ -68,19 +68,19 @@ This project uses Python and OpenCV to detect and read vehicle number plates. An
 
   - Copy your Project URL and API Key.
 
-### Microcontroller Setup (ESP8266/ESP32)
+### 2. Microcontroller Setup (ESP8266/ESP32)
 
-  -Open backend.c in Arduino IDE.
+  - Open backend.c in Arduino IDE.
 
-  -Install the required libraries via Library Manager:
+  - Install the required libraries via Library Manager:
 
-  - ArduinoJson
+    - ArduinoJson
 
-  - Preferences
+    - Preferences
 
-  - WiFiClientSecure
+    - WiFiClientSecure
 
-### Configuration:
+### 3. Configuration:
 Update the following variables in the code with your credentials:
 
 - const char* ssid = "YOUR_WIFI_SSID";
@@ -90,21 +90,26 @@ Update the following variables in the code with your credentials:
 - const char* twilio_sid = "YOUR_TWILIO_SID";
 - const char* twilio_token = "YOUR_TWILIO_TOKEN";
 
-
-### Upload the code to your ESP32.
-
-  - Open the Serial Monitor (Baud Rate: 115200) to find the ESP32 IP Address.
-
-### Computer Vision Setup (Python)
+### 5. Computer Vision Setup (Python)
 
   - Install Python dependencies: pip install -r requirements.txt
-
 
   - Open ANPR.py.
 
   - Update the IP address to match your ESP8266/ESP32: esp32_ip = 'http://<YOUR_ESP32_IP>/receivePlate'
+## How to Run
+- Ensure the ESP32/ESP8266 is powered on and connected to WiFi.
 
-  - Run the python script:
+- Run the Python script. A window showing the webcam feed will appear.
+
+- Show a license plate to the camera.
+
+- A green box will appear around the plate, and the text will be recognized.
+
+- The Python script sends the plate to the ESP32/ESP8266.
+
+- An SMS alert is recieved on the owners/control room's mobile number.
+  
 
 
 
